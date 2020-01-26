@@ -1,0 +1,173 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "paulinedrouhin-noteApp",
+        "description": "note application",
+        "license": {
+            "name": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+        }
+    },
+    "servers": [
+        {
+            "description": "HTTP"
+        }
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/author": {
+            "get": {
+                "tags": [
+                    "Author"
+                ],
+                "summary": "Get all authors in the database",
+                "responses": {
+                    "200": {
+                        "schema": {
+                            "$ref": "#/definitions/Author"
+                        }
+                    },
+                    "500": {
+                        "description": "Error while getting authors list"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Author"
+                ],
+                "summary": "Create a new author",
+                "requestBody": {
+                    "description": "Author Object",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/definitions/Name"
+                            }
+                        }
+                    }
+                },
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "schema": {
+                            "$ref": "#/definitions/Name"
+                        }
+                    },
+                    "500": {
+                        "description": "Error while creating an author."
+                    }
+                }
+            }
+        },
+        "/author/:id/note": {
+            "get": {
+                "tags": [
+                    "Note"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": false,
+                        "description": "Author's id (number)",
+                        "type": "number"
+                    }
+                ],
+                "summary": "Get all notes of a given author with author's id",
+                "responses exampple" : {
+                    "schema": {
+                        "$ref": "#/definitions/Note"
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "number"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Error while getting one author's note with author's ID"
+                    }
+                }
+            }
+        },
+        "/note": {
+            "post": {
+                "tags": [
+                    "Note"
+                ],
+                "summary": "Create a new author",
+                "requestBody": {
+                    "description": "Note Object",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/definitions/Note"
+                            }
+                        }
+                    }
+                },
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                    },
+                    "500": {
+                        "description": "Error while creating an author."
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "Name": {
+            "properties": {
+                "name": {
+                    "type": "string"
+                }
+            }
+        },
+        "Author": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "number"
+                },
+                "name": {
+                    "type": "string"
+                }
+            }
+        },
+        "Note": {
+            "type": "object",
+            "properties": {
+                "title": {
+                    "type": "string"
+                },
+                "content": {
+                    "type": "string"
+                },
+                "author_id": {
+                    "type": "number"
+                }
+            }
+        }
+    }
+}
