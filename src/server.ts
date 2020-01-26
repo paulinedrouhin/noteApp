@@ -1,7 +1,7 @@
 import express, {Application} from "express"
 import bodyParser from "body-parser"
 import cors from "cors"
-import {note} from "./controllers/index"
+import {note} from "./controller/index"
 const app : Application = express()
 
 app.use(cors()) 
