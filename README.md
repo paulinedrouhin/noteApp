@@ -70,3 +70,9 @@ npm run dev
 npm run build
 ```
 
+**Documentation**
+----------
+**Swagger/OpenAPI** 
+A swagger documentation is provided to list the different endpoints of this project. <br />
+You can access it using the http://localhost:4000/api-docs url. 
+
