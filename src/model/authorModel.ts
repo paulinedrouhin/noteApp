@@ -3,7 +3,7 @@ import * as type from './types'
 
 
 export const getAuthors = new Promise((resolve, reject) => {
-    connection.query("SELECT * FROM authorz", (err: any, results: type.Author[]) => {
+    connection.query("SELECT * FROM author", (err: any, results: type.Author[]) => {
         if (err) {
             reject()
         } else resolve(results)

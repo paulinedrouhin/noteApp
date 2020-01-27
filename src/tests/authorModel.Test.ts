@@ -9,21 +9,10 @@ describe("calculation", () => {
     })
 })
 
-// describe("promisetest", () => {
-//     it('resolves', (done) => {
-//         const resolvingPromise = new Promise( (resolve) => {
-//           resolve('promise resolved');
-//         });
-//         resolvingPromise.then( (result) => {
-//           assert.strictEqual(result,'promise resolved');
-//           done();
-//         });
-//       }
-//     )})
 
 describe("getAuthors", () => {
     it('is a function returning an array',  async () => {
-        const result : any = await author.getAuthors.resolve
+        const result : any = await author.getAuthors
         console.log(result)
         
        
@@ -31,8 +20,3 @@ describe("getAuthors", () => {
     })
 })
 
-
-// author.getAuthors.then(result=>{
-//     console.log(typeof result)
-//     assert.deepEqual(typeof result, 'array')
-// })   
