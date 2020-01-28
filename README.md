@@ -65,7 +65,7 @@ $ npm install
 ```
 
 **Project connexion to database** <br />
-To connect the project to our database, you need to create a .env file at the root of the project that contains:
+To connect the project to our database, you need to create a .env file at the root of the project that contains: <br />
 ```
 DB_HOST=localhost
 DB_USER=root
