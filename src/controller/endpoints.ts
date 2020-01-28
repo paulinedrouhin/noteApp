@@ -11,7 +11,7 @@ router.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument))
 // endpoint that allows a client to create an author // 
 // expected parameters in body : name //
 router.post('/author', async (req: Request, res: Response) => {
-    const author: type.Author = req.body
+    const author: string = req.body.name
     authorModel.createAuthors(author).then((results) => {
         res.json(results).status(200)
     }).catch(()=>{
@@ -43,6 +43,7 @@ router.post('/note', async (req: Request, res: Response) => {
 // expected parameter in params : author's id //
 router.get('/author/:id/note', async (req: Request, res: Response) => {
     const authorId : any = req.params.id
+    console.log('note ' ,typeof req.params.id)
     noteModel.getAuthorsNotes(authorId).then((results) => {
         res.json(results).status(200)
     }).catch(() => {

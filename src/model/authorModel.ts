@@ -10,10 +10,10 @@ export const getAuthors = new Promise((resolve, reject) => {
     })
 })
 
-export const createAuthors = (author : type.Author) => {
+export const createAuthors = (author : string) => {
     return new Promise((resolve, reject) => {
     connection.query(`INSERT INTO author(name) VALUES (?) `, author, (err: any, results: any) => {
-                if (err) {
+                if (err || typeof author !== 'string') {
             reject()
         } else resolve(results)
     })

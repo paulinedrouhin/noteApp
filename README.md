@@ -19,12 +19,22 @@ $ sudo service mysql stop
 ```
 _or use a different port than 3306 for your MySQL image_ <br />
 
+run the following commands : <br />
+(for the first one you will need to modify yourPassword with the MySQL password of your choice, without the < >)
+
 ```
 $ docker run --name mysqldb -e MYSQL_ROOT_PASSWORD=<yourPassword>, -d -p 3306:3306 mysql:5.7  
 ```
+
 ```
 $ docker start mysqldb
 ```
+
+```
+$ docker exec -it mysqldb mysql -u root -p 
+```
+
+
 
 **MySQL Database initialization** <br />
 To create our database in MySQL, run the following commands : 
