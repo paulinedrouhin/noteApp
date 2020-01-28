@@ -11,7 +11,7 @@ export const createNote = (note : type.Note) => {
 })
 }
 
-export const getAuthorsNotes = (authorId : String) => {
+export const getAuthorsNotes = (authorId : Number) => {
     return new Promise((resolve, reject) => {
         connection.query("SELECT * FROM note WHERE author_id = ?", authorId, (err: any, results: type.Note[]) => {
             if (err) {
