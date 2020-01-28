@@ -42,7 +42,7 @@ router.post('/note', async (req: Request, res: Response) => {
 // endpoint that allows a client to list created authors // 
 // expected parameter in params : author's id //
 router.get('/author/:id/note', async (req: Request, res: Response) => {
-    const authorId : String = req.params.id
+    const authorId : any = req.params.id
     noteModel.getAuthorsNotes(authorId).then((results) => {
         res.json(results).status(200)
     }).catch(() => {
