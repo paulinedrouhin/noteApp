@@ -1,7 +1,6 @@
 import * as note from "../model/noteModel"
 import * as type from "../model/types"
 import assert from "assert"
-import chai from "chai"
 
 
 /// function getAuthorsNotes returns an array ///

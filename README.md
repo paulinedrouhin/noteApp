@@ -83,7 +83,7 @@ You can access it using the http://localhost:4000/api-docs url.
 **Test** <br />
 ----------
 This project uses Mocha for code testing. To run the tests, you'll need to have the proper environment set up : <br />
-- MySQL database "alsid" is installed and running <br />
+- MySQL is installed and running, with "alsid" database initialized<br />
 - Run the following command : 
 ```
 npm run build
